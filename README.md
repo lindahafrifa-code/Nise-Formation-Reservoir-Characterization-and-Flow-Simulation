@@ -90,4 +90,4 @@ flow simulation/TWOPHASE3D_GAS_A.DATA      # requires OPM Flow; swap in _B or _C
 
 MSc Petroleum Geosciences, NTNU — Department of Geoscience and Petroleum. Thesis: *"Reservoir Characterization and Hydrocarbon Flow Potential of the Upper Cretaceous Nise Formation: Halten Terrace and Nordland Ridge, Offshore Mid-Norway"* (January 2025). Supervised by Arve Næss (NTNU/Equinor) and Carl Fredrik Berg (NTNU). Full thesis available on request.
 
-[LinkedIn](#)
+[LinkedIn](https://www.linkedin.com/in/linda-afrifa)
