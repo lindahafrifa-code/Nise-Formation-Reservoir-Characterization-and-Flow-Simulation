@@ -1,2 +1,93 @@
 # Nise-Formation-Reservoir-Characterization-and-Flow-Simulation
 Integrated reservoir characterization, petrophysics, geological modelling, Python, and reservoir simulation for gas-bearing turbidite reservoirs offshore Norway.
+
+# Reservoir Characterization & Dynamic Flow Simulation
+Static-to-dynamic reservoir characterization of the Upper Cretaceous Nise Formation on the eastern Vøring Margin, Norwegian Sea: petrophysical interpretation of four wells, a custom-built 3D geological grid, and gas flow simulation across three well-placement scenarios. Estimated Gas-in-Place: **320 million Sm³**.
+
+This repository contains the original Python grid-generation script and OPM Flow simulation decks behind my MSc thesis at NTNU (Department of Geoscience and Petroleum). Graded A. Supervised by Arve Næss (NTNU/Equinor), with examination input from Philip Ringrose (Equinor).
+
+## Why the Nise Formation
+
+The Nise Formation sits stratigraphically above most of the producing Jurassic fields on the eastern Vøring Margin — Halten Terrace, Nordland Ridge — and is penetrated by a large share of ongoing exploration in the area, yet it has had little dedicated characterization of its own. It also carries a regulatory dimension: wells passing through the Nise in hydrocarbon zones need effective plugging and abandonment to prevent gas migration into the well-casing annulus, so its flow behavior matters beyond exploration upside alone.
+
+![Structural map of the study area](figures/fig01_structural_map.png)
+
+## Data & tools
+
+Well log and core data came from NPD/DISKOS for four wells: 6407/1-4, 6407/4-1, and 6407/2-1 in the Halten Terrace, and 6610/3-1 in the Vestfjorden Basin. Petrophysical interpretation — shale volume, porosity, water saturation, permeability via the Schlumberger chart — was done in Interactive Petrophysics (IP). The 3D geological grid (2,250,000 cells) was built from scratch in Python (NumPy, GSTools, Matplotlib). Dynamic simulation ran in OPM Flow, the open-source reservoir simulator Equinor itself co-develops, with results visualized in ResInsight. PVT and relative permeability data are from Equinor's Open Database License dataset.
+
+A note on data: well-completion reports and raw LAS files came through DISKOS with confidentiality terms attached and aren't redistributed here. Core photos are public-domain NPD material (NPD, 2024a) and are used below with that attribution. Everything else in this repository — code, simulation decks, derived figures — is either originally authored or carries an explicit open license.
+
+## Tying core to log: defining the channel and lobe architecture
+
+Lithofacies were first described from core photographs — lithology, grain size, sorting, sedimentary structure — then calibrated against the gamma-ray and resistivity log response, so the same channel and lobe motifs could be recognized in the uncored intervals.
+
+![Core-to-log calibration for a channel interval](figures/fig02_channel_core_log_calibration.png)
+
+A blocky, cylindrical gamma-ray motif over a 3–4 m interval in Well 6610/3-1 calibrates to a channel fill in core — F3-C sandstone over F2 heterolithics.
+
+![Core-to-log calibration for a lobe interval](figures/fig03_lobe_core_log_calibration.png)
+
+A coarsening-upward "funnel" gamma-ray trend over an 8 m interval in the same well calibrates to a lobe complex, with F1 hemipelagic mudstone capping an upward transition through F2 into F3-C sandstone.
+
+![Lithofacies thickness by well](figures/fig04_lithofacies_thickness_per_well.png)
+
+Lithofacies thickness varies considerably across the three cored wells — 6407/1-4 is dominated by heterolithics (F2), while 6610/3-1 shows the fullest channel-to-lobe sandstone development. That's part of why the dynamic model's channel and lobe dimensions lean on 6610/3-1 plus the published analogs below, rather than averaging across all four wells.
+
+## Workflow
+
+![Methodology workflow](figures/fig05_methodology_workflow.png)
+
+Concept model from core photos, well logs, and analogs → petrophysical interpretation in IP → object-based 3D grid in Python → dynamic simulation in OPM Flow → visualization and forecasting in ResInsight.
+
+## Building the model
+
+Channel and lobe geometry was dimensioned using deep-marine analogs — the Frysjaodden Formation (Norway), Karoo Basin (South Africa), and the Jaca and Ainsa Basins (Spain) — where the four wells alone couldn't constrain lateral extent. [`scripts/createGrid.py`](scripts/createGrid.py) builds a 150×300×50 cell grid (30 m × 100 m × 1 m per cell) containing two stacked lobes and a feeder channel, assigns porosity through a Gaussian random field centered on facies-specific means (0.20 in the channel, 0.15 in the lobes), and derives permeability through a power-law fit calibrated against the IP well-log analysis (10–121 mD across the model).
+
+![Reservoir realization grid](figures/fig06_reservoir_realization_grid.png)
+
+![ResInsight 3D model with well locations](figures/fig07_resinsight_3d_model.png)
+
+## Dynamic simulation & results
+
+Three single-well scenarios in [`simulation/`](simulation/) test how placement affects recoverable gas: PROD A sits on the channel/lobe axis, PROD B is off-axis through two lobes, and PROD C sits at a lobe fringe near the gas-water contact. Each was run independently — the other two wells shut — at an initial pressure of 210 bar against a 190 bar BHP constraint, over one year of production.
+
+![Remaining gas-in-place](figures/fig08_gas_in_place.png)
+
+| Well | Position | Year-end cumulative production | Recovery factor |
+|---|---|---|---|
+| PROD A | Channel/lobe axis | 2.25 MMSm³ | 1.0% |
+| PROD B | Two lobes, off-axis | 1.13 MMSm³ | 0.4% |
+| PROD C | Lobe fringe, near GWC | 0.54 MMSm³ | 0.17% |
+
+![PROD A production curve](figures/fig09_prod_a_curve.png)
+
+![PROD B production curve](figures/fig10_prod_b_curve.png)
+
+![PROD C production curve](figures/fig11_prod_c_curve.png)
+
+PROD A produced roughly four times PROD C's total, tracking the permeability and porosity falloff away from the channel axis (18–25% porosity and 50–121 mD in the channel versus 9–20% and 10–62 mD in the lobes). PROD C still produced a meaningful volume despite sitting at the lobe fringe, which points to the channel-lobe system staying hydraulically connected even where individual architectural elements are weaker on their own.
+
+## Decisions & trade-offs
+
+Object-based facies modeling was used instead of a pixel-based approach so the channel and lobe geometry could be tied directly to a depositional concept (Walker's submarine fan model) rather than to a generic statistical texture. Where the four wells couldn't constrain lateral geometry, dimensions were borrowed from published analogs — a standard approach for sparse subsurface data, but one that carries irreducible uncertainty the model doesn't capture on its own. OPM Flow was chosen over a commercial simulator partly for access and partly because it's the same open-source engine Equinor develops and runs internally. The three scenarios are single-well, one-year runs rather than a full multi-well depletion schedule — enough to compare placement sensitivity, not enough to forecast field-level economics; that's a natural next step.
+
+## Limitations
+
+Four wells and three cores is a thin dataset for a formation this heterogeneous, and the lateral continuity assumptions lean on analogs rather than local data. A fuller assessment would bring in more wells, longer simulation horizons, and a proper sensitivity sweep on the analog-derived geometry parameters.
+
+## Reproducing this
+
+```bash
+pip install numpy matplotlib gstools
+python scripts/createGrid.py              # writes PORO.INC, PERM.INC, FIPNUM.INC
+flow simulation/TWOPHASE3D_GAS_A.DATA      # requires OPM Flow; swap in _B or _C for the other scenarios
+```
+
+`PORO.INC`, `PERM.INC`, and `FIPNUM.INC` are regenerated rather than stored in this repo — each is 2,250,000 lines of raw per-cell values.
+
+## Background
+
+MSc Petroleum Geosciences, NTNU — Department of Geoscience and Petroleum. Thesis: *"Reservoir Characterization and Hydrocarbon Flow Potential of the Upper Cretaceous Nise Formation: Halten Terrace and Nordland Ridge, Offshore Mid-Norway"* (January 2025). Supervised by Arve Næss (NTNU/Equinor) and Carl Fredrik Berg (NTNU). Full thesis available on request.
+
+[LinkedIn](#)
