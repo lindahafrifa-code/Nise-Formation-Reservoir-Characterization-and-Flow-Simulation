@@ -1,7 +1,7 @@
 # Nise Formation Reservoir Characterization & Dynamic Flow Simulation
 
-Static-to-dynamic reservoir characterization of the Upper Cretaceous Nise Formation on the eastern Vøring Margin, Norwegian Sea: 
-petrophysical interpretation of four wells, a custom-built 3D geological grid, and gas flow simulation across three well-placement scenarios. 
+Static-to-dynamic reservoir characterization of the Upper Cretaceous deep marine Nise Formation on the eastern Vøring Margin, Norwegian Sea: 
+Petrophysical interpretation of 4 wells, a custom-built 3D geological grid, and gas flow simulation across 3 well-placement scenarios. 
 Estimated Gas-in-Place: **320 million Sm³**.
 
 This repository contains the original Python grid-generation script and OPM Flow simulation decks behind my MSc thesis at NTNU 
@@ -9,15 +9,23 @@ This repository contains the original Python grid-generation script and OPM Flow
 
 ## Why the Nise Formation
 
-The Nise Formation sits stratigraphically above most of the producing Jurassic fields on the eastern Vøring Margin — Halten Terrace, Nordland Ridge — and is penetrated by a large share of ongoing exploration in the area, yet it has had little dedicated characterization of its own. It also carries a regulatory dimension: wells passing through the Nise in hydrocarbon zones need effective plugging and abandonment to prevent gas migration into the well-casing annulus, so its flow behavior matters beyond exploration upside alone.
+The Nise Formation sits stratigraphically above most of the producing Jurassic fields on the eastern Vøring Margin — Halten Terrace, Nordland Ridge — and is penetrated by a large share of ongoing exploration in the area, yet it has had little dedicated characterization of its own. 
+It also carries a regulatory dimension: wells passing through the Nise in hydrocarbon zones need effective plugging and abandonment to prevent gas migration into the well-casing annulus, 
+so its flow behavior matters beyond exploration upside alone.
 
 ![Structural map of the study area](figures/fig01_structural_map.png)
 
 ## Data & tools
 
-Well log and core data came from NPD/DISKOS for four wells: 6407/1-4, 6407/4-1, and 6407/2-1 in the Halten Terrace, and 6610/3-1 in the Vestfjorden Basin. Petrophysical interpretation — shale volume, porosity, water saturation, permeability via the Schlumberger chart — was done in Interactive Petrophysics (IP). The 3D geological grid (2,250,000 cells) was built from scratch in Python (NumPy, GSTools, Matplotlib). Dynamic simulation ran in OPM Flow, the open-source reservoir simulator Equinor itself co-develops, with results visualized in ResInsight. PVT and relative permeability data are from Equinor's Open Database License dataset.
+Well log and core data came from NPD/DISKOS for 4 wells: 6407/1-4, 6407/4-1, and 6407/2-1 in the Halten Terrace, and 6610/3-1 in the Vestfjorden Basin. 
+Petrophysical interpretation — shale volume, porosity, water saturation, permeability was done in Interactive Petrophysics (IP). 
+The 3D geological grid (2,250,000 cells) was built from scratch in Python (NumPy, GSTools, Matplotlib). 
+Dynamic simulation ran in OPM Flow, the open-source reservoir simulator Equinor itself co-develops, with results visualized in ResInsight. 
+PVT and relative permeability data are from Equinor's Open Database License dataset.
 
-A note on data: well-completion reports and raw LAS files came through DISKOS with confidentiality terms attached and aren't redistributed here. Core photos are public-domain NPD material (NPD, 2024a) and are used below with that attribution. Everything else in this repository — code, simulation decks, derived figures — is either originally authored or carries an explicit open license.
+A note on data: well-completion reports and raw LAS files came through DISKOS with confidentiality terms attached and aren't redistributed here.
+Core photos are public-domain NPD material (NPD, 2024a) and are used below with that attribution.
+Everything else in this repository — code, simulation decks, derived figures — is either originally authored or carries an explicit open license.
 
 ## Tying core to log: defining the channel and lobe architecture
 
