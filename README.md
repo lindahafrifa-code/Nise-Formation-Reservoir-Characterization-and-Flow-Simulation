@@ -1,10 +1,11 @@
-# Nise-Formation-Reservoir-Characterization-and-Flow-Simulation
-Integrated reservoir characterization, petrophysics, geological modelling, Python, and reservoir simulation for gas-bearing turbidite reservoirs offshore Norway.
+# Nise Formation Reservoir Characterization & Dynamic Flow Simulation
 
-# Reservoir Characterization & Dynamic Flow Simulation
-Static-to-dynamic reservoir characterization of the Upper Cretaceous Nise Formation on the eastern Vøring Margin, Norwegian Sea: petrophysical interpretation of four wells, a custom-built 3D geological grid, and gas flow simulation across three well-placement scenarios. Estimated Gas-in-Place: **320 million Sm³**.
+Static-to-dynamic reservoir characterization of the Upper Cretaceous Nise Formation on the eastern Vøring Margin, Norwegian Sea: 
+petrophysical interpretation of four wells, a custom-built 3D geological grid, and gas flow simulation across three well-placement scenarios. 
+Estimated Gas-in-Place: **320 million Sm³**.
 
-This repository contains the original Python grid-generation script and OPM Flow simulation decks behind my MSc thesis at NTNU (Department of Geoscience and Petroleum). Graded A. Supervised by Arve Næss (NTNU/Equinor), with examination input from Philip Ringrose (Equinor).
+This repository contains the original Python grid-generation script and OPM Flow simulation decks behind my MSc thesis at NTNU 
+(Department of Geoscience and Petroleum). Graded A. Supervised by Arve Næss (NTNU/Equinor).
 
 ## Why the Nise Formation
 
