@@ -9,9 +9,8 @@ This repository contains the original Python grid-generation script and OPM Flow
 
 ## Why the Nise Formation
 
-The Nise Formation sits stratigraphically above most of the producing Jurassic fields on the eastern Vøring Margin — Halten Terrace, Nordland Ridge — and is penetrated by a large share of ongoing exploration in the area, yet it has had little dedicated characterization of its own. 
-It also carries a regulatory dimension: wells passing through the Nise in hydrocarbon zones need effective plugging and abandonment to prevent gas migration into the well-casing annulus, 
-so its flow behavior matters beyond exploration upside alone.
+The Nise Formation sits stratigraphically above most of the producing Jurassic fields on the eastern Vøring Margin — Halten Terrace, Nordland Ridge (Norwegian Sea) — and is penetrated by a large share of ongoing exploration in the area, yet it has had little dedicated characterization of its own. 
+Additionally, it carries a regulatory dimension: wells passing through the Nise in hydrocarbon zones need effective plugging and abandonment to prevent gas migration into the well-casing annulus. Hence its flow behavior matters beyond exploration upside alone.
 
 ![Structural map of the study area](figures/fig01_structural_map.png)
 
