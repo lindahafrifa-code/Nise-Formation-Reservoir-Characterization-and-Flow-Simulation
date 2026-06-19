@@ -30,7 +30,7 @@ Additionally, it carries a regulatory dimension: wells passing through the Nise 
 
 ## Tying core to log: defining the channel and lobe architecture
 
-Lithofacies were first described from core photographs; lithology, grain size, sorting, and sedimentary structure. Then calibrated against the gamma-ray and resistivity log responses. This calibration allowed the same channel and lobe motifs to be recognized in the uncored intervals.
+Lithofacies were first described from core photographs; lithology, grain size, sorting, and sedimentary structure. Then calibrated against the gamma-ray and resistivity log responses. This calibration allowed the same channel and lobe motifs to be recognized in the uncored well intervals.
 
 ![Core-to-log calibration for a channel interval](figures/fig02_channel_core_log_calibration.png)
 
