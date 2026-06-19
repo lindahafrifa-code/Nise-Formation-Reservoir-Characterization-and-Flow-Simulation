@@ -17,7 +17,9 @@ Additionally, it carries a regulatory dimension: wells passing through the Nise 
 ## Data & tools
 
 •	Well log and core data for 4 wells: 6407/1-4, 6407/4-1, 6407/2-1 in the Halten Terrace, and 6610/3-1 in the Vestfjorden Basin, were obtained from NPD/DISKOS. 
+
 •	Petrophysical interpretation (shale volume, porosity, water saturation, and permeability) was performed in Interactive Petrophysics (IP).
+
 •	The 3D geological grid (2,250,000 cells) was built from scratch in Python (NumPy, GSTools, Matplotlib). 
 •	Dynamic simulation was run in OPM Flow, the open-source reservoir simulator co-developed by Equinor, and the results were visualized in ResInsight. 
 •	PVT and relative permeability data are from Equinor's Open Database License dataset.
