@@ -21,9 +21,12 @@ Additionally, it carries a regulatory dimension: wells passing through the Nise 
 •	Petrophysical interpretation (shale volume, porosity, water saturation, and permeability) was performed in Interactive Petrophysics (IP).
 
 •	The 3D geological grid (2,250,000 cells) was built from scratch in Python (NumPy, GSTools, Matplotlib). 
+
 •	Dynamic simulation was run in OPM Flow, the open-source reservoir simulator co-developed by Equinor, and the results were visualized in ResInsight. 
+
 •	PVT and relative permeability data are from Equinor's Open Database License dataset.
-**A note on data**: well-completion reports and raw LAS files were downloaded from DISKOS under confidentiality terms and aren't redistributed here. Core photos are public-domain NPD material (NPD, 2024a) and are used below with that attribution. Everything else in this repository (code, simulation decks, and derived figures) is either original or carries an explicit open license.
+
+**Note on data**: well-completion reports and raw LAS files were downloaded from DISKOS under confidentiality terms and aren't redistributed here. Core photos are public-domain NPD material (NPD, 2024a) and are used below with that attribution. Everything else in this repository (code, simulation decks, and derived figures) is either original or carries an explicit open license.
 
 ## Tying core to log: defining the channel and lobe architecture
 
