@@ -5,7 +5,7 @@ Petrophysical interpretation of 4 wells, a custom-built 3D geological grid, and 
 Estimated Gas-in-Place: **320 million Sm³**.
 
 This repository contains the original Python grid-generation script and OPM Flow simulation decks behind my MSc thesis at NTNU 
-(Department of Geoscience and Petroleum). Graded A. Supervised by Arve Næss (NTNU/Equinor).
+(Department of Geoscience and Petroleum). Supervised by NTNU and Equinor.
 
 ## Why the Nise Formation
 
