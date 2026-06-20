@@ -35,8 +35,7 @@ Then calibrated against the gamma-ray and resistivity log responses.
 This calibration allowed the same channel and lobe motifs to be recognized in the uncored well intervals.
 
 ![Core-to-log calibration for a channel interval](images/fig02_channel_core_log_calibration.png)
-
-A blocky, cylindrical gamma-ray motif over a 3–4 m interval in Well 6610/3-1 calibrates to a channel fill in core — F3-C sandstone over F2 heterolithics.
+A blocky, cylindrical gamma-ray motif over a 3-4m interval in Well 6610/3-1 calibrates to a channel fill in core. The F3-C sandstone subfacies consist of poorly to well-sorted, fine to medium to coarse-grained, amalgamated white to dark grey sandstones. The F2 heterolithics are thin sandstone/siltstone layers (≤ 0.05 meters thick) interbedded with predominantly dark grey to black mudstones, exhibiting varying levels of bioturbation .
 
 ![Core-to-log calibration for a lobe interval](figures/fig03_lobe_core_log_calibration.png)
 
