@@ -51,9 +51,9 @@ Lithofacies thickness varies considerably across the three cored wells. 6407/1-4
 
 Channel and lobe architectural elements (sand-bearing) were dimensioned using 3 key analog studies of the Frysjaodden Formation (Norway), the Karoo Basin (South Africa), and the Jaca and Ainsa Basins (Spain), because the four wells alone couldn't constrain the lateral extent. [`scripts/createGrid.py`](python/createGrid.py) builds a 150×300×50 cell grid (30m×100m×1m per cell) containing two stacked lobes and a feeder channel, assigns porosity through a Gaussian random field centered on facies-specific means (0.20 in the channel, 0.15 in the lobes), and derives permeability through a power-law fit calibrated against the IP well-log analysis (10-121 mD across the model).
 
-![Reservoir realization grid](figures/fig06_reservoir_realization_grid.png)
+![Reservoir realization grid](images/fig06_reservoir_realization_grid.png)
 
-![ResInsight 3D model with well locations](figures/fig07_resinsight_3d_model.png)
+![ResInsight 3D model with well locations](images/fig07_resinsight_3d_model.png)
 
 ## Dynamic simulation & results
 
