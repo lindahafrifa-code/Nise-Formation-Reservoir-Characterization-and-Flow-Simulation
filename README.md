@@ -72,11 +72,14 @@ Channel and lobe architectural elements (sand-bearing) were dimensioned using 3 
 
 ![PROD C production curve](images/fig11_prod_c_curve.png)
 
-PROD A produced roughly four times PROD C's total, tracking the permeability and porosity falloff away from the channel axis (18–25% porosity and 50–121 mD in the channel versus 9–20% and 10–62 mD in the lobes). PROD C still produced a meaningful volume despite sitting at the lobe fringe, which points to the channel-lobe system staying hydraulically connected even where individual architectural elements are weaker on their own.
+PROD A produced roughly four times PROD C's total, tracking the permeability and porosity falloff away from the channel axis (18–25% porosity and 50–121 mD in the channel versus 9–20% and 10–62 mD in the lobes). PROD C still produced a meaningful volume despite sitting at the lobe fringe, which points to the channel-lobe system staying hydraulically connected even where individual architectural elements are weaker on their own. PROD C shows a possible leakage of gas into well-casing annulus in water zones.
 
 ## Decisions & trade-offs
 
-Object-based facies modeling was used instead of a pixel-based approach so the channel and lobe geometry could be tied directly to a depositional concept (Walker's submarine fan model) rather than to a generic statistical texture. Where the four wells couldn't constrain lateral geometry, dimensions were borrowed from published analogs — a standard approach for sparse subsurface data, but one that carries irreducible uncertainty the model doesn't capture on its own. OPM Flow was chosen over a commercial simulator partly for access and partly because it's the same open-source engine Equinor develops and runs internally. The three scenarios are single-well, one-year runs rather than a full multi-well depletion schedule — enough to compare placement sensitivity, not enough to forecast field-level economics; that's a natural next step.
+•	Object-based facies modeling was used instead of a pixel-based approach to tie channel and lobe geometry directly to a depositional concept (Walker's submarine fan model) rather than to a generic statistical texture. 
+•	Where the four wells couldn't constrain lateral geometry, dimensions were borrowed from published analogs; a standard approach for sparse subsurface data, but one that carries irreducible uncertainty the model doesn't capture on its own. 
+•	OPM Flow was chosen for both access and because it's the same open-source engine that Equinor develops and runs internally. 
+•	The three scenarios are single-well, one-year runs rather than a full multi-well depletion schedule, enough to compare placement sensitivity, not enough to forecast field-level economics; that's a natural next step.
 
 ## Limitations
 
@@ -94,6 +97,6 @@ flow simulation/TWOPHASE3D_GAS_A.DATA      # requires OPM Flow; swap in _B or _C
 
 ## Background
 
-MSc Petroleum Geosciences, NTNU — Department of Geoscience and Petroleum. Thesis: *"Reservoir Characterization and Hydrocarbon Flow Potential of the Upper Cretaceous Nise Formation: Halten Terrace and Nordland Ridge, Offshore Mid-Norway"* (January 2025). Supervised by Arve Næss (NTNU/Equinor) and Carl Fredrik Berg (NTNU). Full thesis available on request.
+MSc Petroleum Geosciences, NTNU — Department of Geoscience and Petroleum. Thesis: *"Reservoir Characterization and Hydrocarbon Flow Potential of the Upper Cretaceous Nise Formation: Halten Terrace and Nordland Ridge, Offshore Mid-Norway"* (January 2025). Supervised by Arve Næss (Equinor) and Carl Fredrik Berg (NTNU). Full thesis available on request.
 
 [LinkedIn](https://www.linkedin.com/in/linda-afrifa)
