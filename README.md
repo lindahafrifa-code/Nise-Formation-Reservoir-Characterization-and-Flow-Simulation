@@ -34,7 +34,7 @@ Lithofacies were first described from core photographs; lithology, grain size, s
 Then calibrated against the gamma-ray and resistivity log responses. 
 This calibration allowed the same channel and lobe motifs to be recognized in the uncored well intervals.
 
-![Core-to-log calibration for a channel interval](figures/fig02_channel_core_log_calibration.png)
+![Core-to-log calibration for a channel interval](images/fig02_channel_core_log_calibration.png)
 
 A blocky, cylindrical gamma-ray motif over a 3–4 m interval in Well 6610/3-1 calibrates to a channel fill in core — F3-C sandstone over F2 heterolithics.
 
