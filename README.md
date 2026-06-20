@@ -58,7 +58,7 @@ Channel and lobe architectural elements (sand-bearing) were dimensioned using 3 
 ## Dynamic simulation & results
 
 3 single-well scenarios in [`simulation/`](simulation/) test how placement affects recoverable gas: PROD A sits on the channel/lobe axis, PROD B is off-axis through two lobes, and PROD C sits at a lobe fringe near the gas-water contact. Each was run independently; the other two wells were shut. Initial pressure was 210 bar against a 190 bar BHP constraint over one year of production.
-![Remaining gas-in-place](figures/fig08_gas_in_place.png)
+![Remaining gas-in-place](images/fig08_gas_in_place.png)
 
 | Well | Position | Year-end cumulative production | Recovery factor |
 |---|---|---|---|
@@ -66,11 +66,11 @@ Channel and lobe architectural elements (sand-bearing) were dimensioned using 3 
 | PROD B | Two lobes, off-axis | 1.13 MMSm³ | 0.4% |
 | PROD C | Lobe fringe, near GWC | 0.54 MMSm³ | 0.17% |
 
-![PROD A production curve](figures/fig09_prod_a_curve.png)
+![PROD A production curve](images/fig09_prod_a_curve.png)
 
-![PROD B production curve](figures/fig10_prod_b_curve.png)
+![PROD B production curve](images/fig10_prod_b_curve.png)
 
-![PROD C production curve](figures/fig11_prod_c_curve.png)
+![PROD C production curve](images/fig11_prod_c_curve.png)
 
 PROD A produced roughly four times PROD C's total, tracking the permeability and porosity falloff away from the channel axis (18–25% porosity and 50–121 mD in the channel versus 9–20% and 10–62 mD in the lobes). PROD C still produced a meaningful volume despite sitting at the lobe fringe, which points to the channel-lobe system staying hydraulically connected even where individual architectural elements are weaker on their own.
 
