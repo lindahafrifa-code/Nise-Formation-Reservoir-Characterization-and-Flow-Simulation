@@ -77,8 +77,11 @@ PROD A produced roughly four times PROD C's total, tracking the permeability and
 ## Decisions & trade-offs
 
 •	Object-based facies modeling was used instead of a pixel-based approach to tie channel and lobe geometry directly to a depositional concept (Walker's submarine fan model) rather than to a generic statistical texture. 
+
 •	Where the four wells couldn't constrain lateral geometry, dimensions were borrowed from published analogs; a standard approach for sparse subsurface data, but one that carries irreducible uncertainty the model doesn't capture on its own. 
+
 •	OPM Flow was chosen for both access and because it's the same open-source engine that Equinor develops and runs internally. 
+
 •	The three scenarios are single-well, one-year runs rather than a full multi-well depletion schedule, enough to compare placement sensitivity, not enough to forecast field-level economics; that's a natural next step.
 
 ## Limitations
