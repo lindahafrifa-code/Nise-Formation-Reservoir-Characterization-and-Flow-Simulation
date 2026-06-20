@@ -1,0 +1,224 @@
+
+RUNSPEC
+-- --------------------------------------------------
+
+TITLE
+3D Model for Nise Formation
+
+DIMENS
+   150 300 50 /
+
+-- The number of equilibration regions is inferred
+-- from the EQLDIMS keyword.
+EQLDIMS
+/
+
+-- The number of PVTW tables is inferred from the
+-- TABDIMS keyword;  when no data is included in the
+-- keyword, then the default values are used.
+TABDIMS
+ 1 2 100 100
+/
+
+
+WATER
+GAS
+
+
+METRIC
+
+START
+   1 'JAN' 2025 /
+
+WELLDIMS
+-- Item 1: maximum number of wells in the model
+-- 	   - there are two wells in the problem;
+--           injector and producer
+-- Item 2: maximum number of grid blocks connected
+--  to any one well
+-- 	   - must be one as the wells are located
+--           at specific grid blocks
+-- Item 3: maximum number of groups in the model
+-- 	   - we are dealing with only one 'group'
+-- Item 4: maximum number of wells in any one group
+-- 	   - there must be two wells in a group
+--           as there are two wells in total
+   3 100 1 3 /
+
+-- The UNIFOUT keyword is used to request the
+-- output files to be on a unified format, i.e.
+-- the output from different timesteps are
+-- collected into a single file.
+UNIFOUT
+
+GRID
+-- --------------------------------------------------
+
+-- The INIT keyword is used to request an .INIT file.
+-- The .INIT file is written before the simulation
+-- actually starts, and contains grid properties and
+-- saturation tables as inferred from the input
+-- deck. There are no other keywords which can be
+-- used to configure exactly what is written to
+-- the .INIT file.
+INIT
+
+
+NOECHO
+
+
+--There are in total 102 cells with length 2.0m
+-- in x-direction. The main part of the model is
+-- the 100 cells in the middle. The two outer
+-- cells are dummy cells with high permeability
+-- to distribute the flow from the wells to the
+-- full cross-section.
+
+
+DX 
+   	300000*100.0 /
+
+DY
+	300000*100.0 /
+
+DZ 
+	300000*1.0 /
+
+TOPS
+-- The depth of the top of each grid block
+  90000*1000 /
+
+
+INCLUDE
+ 'PORO.INC' /
+ /
+
+INCLUDE
+ 'PERM.INC' /
+ /
+
+COPY
+ 'PERMX' 'PERMY' /
+ 'PERMX' 'PERMZ' /
+/
+
+	
+ECHO
+
+PROPS
+-- -------------------------------------------------
+
+INCLUDE
+-- 'SWOF.INC' /
+ 'SGWF.INC' /
+/
+
+
+
+
+--DENSITY
+--   Oil       Water     Gas
+-- (kg/m3)   (kg/m3)   (kg/m3)
+--     849       1025      0.82   /
+
+--PVTW
+-- REF.PRES.  REF. FVF  COMPRESSIBILITY  REF.VISC.
+--        -> VISCOSIBILITY
+--  (bar) (m3/m3) (1/bar)    (cP)       (1/bar)
+--     150   1.01   1.0e-4     1.0        0.0e+0   /
+
+--PVDO
+-- 
+-- 
+--  PRES.   FVF.   VISC.
+--    20.68   1.01   0.99
+--    55.16   1.00   1.00
+--   551.58   0.99   1.01
+--/
+
+INCLUDE 
+'PVT-WET-GAS.INC' /
+/
+
+ROCK
+-- REF.PRES   COMPRESSIBILITY
+--  (bars)        (1/bars)
+     150          0.0e-6   /
+     150          0.0e-6   /
+
+
+SOLUTION
+-- -------------------------------------------------
+
+-- Initial water saturation for each grid cell
+-- We have only water
+SWAT
+  100000*0.0 2150000*1.0
+/
+
+-- Initial pressure
+PRESSURE
+  2250000*100.0
+/
+
+
+SUMMARY
+-- -------------------------------------------------
+
+-- This keyword enable printing out all the most
+-- commonly used data.
+ALL 
+
+-- This keyword enable printing out the
+-- cummulative CPU use at different time steps. 
+TCPU
+
+
+SCHEDULE
+-- -------------------------------------------------
+
+-- This keyword enable printing out restart files.
+RPTRST
+  BASIC=1 /
+
+
+-- The WELSPECS keyword is used to defined some
+-- general data for the wells; where they enter
+-- the grid, and what kind of fluids they handle.
+WELSPECS
+-- Item #:
+--  1	 	2	3	4	5	 6
+ 'PROD A'	'G1'	75	150	1000	'GAS' /
+ 'PROD B'	'G1'	62	150	1000	'GAS' /
+ 'PROD C'	'G1'	94	150	1000	'GAS' /
+/
+
+-- The COMPDAT keyword defines how a well is
+-- connected to the reservoir (where it is
+-- completed/perforated)
+COMPDAT
+-- Item #:
+-- 1		 2  3   4	5  6	 7  8	9
+ 'PROD A'	75 150 1	12 'SHUT' 1* 1*	0.16 /
+ 'PROD B'	62 150 1	8 'SHUT' 1* 1*	0.16 /
+ 'PROD C'	94 150 1	8 'OPEN' 1* 1*	0.16 /
+
+/
+
+-- This keyword defines well constraints for
+-- production wells
+WCONPROD
+-- Item #:1	  2      3    4-8	9
+	'PROD A' 'OPEN' 'BHP' 5*  80.0 /
+  'PROD B' 'OPEN' 'BHP' 5*  80.0 /
+  'PROD C' 'OPEN' 'BHP' 5*  80.0 /
+/
+
+
+-- This keyword defines times to when the simulation
+-- shall advance. One can use both dates and times.
+
+TSTEP
+ 16*10.0 12*15.0/
+
+END
