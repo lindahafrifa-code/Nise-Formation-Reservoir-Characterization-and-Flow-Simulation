@@ -26,7 +26,10 @@ Additionally, it has a regulatory dimension: wells passing through the Nise in h
 
 •	PVT and relative permeability data are from Equinor's Open Database License dataset.
 
-**Note on data**: well-completion reports and raw LAS files were downloaded from DISKOS under confidentiality terms and aren't redistributed here. Core photos are public-domain NPD material (NPD, 2024a) and are used below with that attribution. Everything else in this repository (code, simulation decks, and derived figures) is either original or carries an explicit open license.
+**Note on data**: well-completion reports and raw LAS files were downloaded from DISKOS under confidentiality terms and aren't redistributed here. 
+Seismic interpretation was used to constrain fan geometry and dimensions during the geological modelling process but is not included in this repository due to confidentiality restrictions.
+Core photos are public-domain NPD material (NPD, 2024a) and are used below with that attribution. 
+Everything else in this repository (code, simulation decks, and derived figures) is either original or carries an explicit open license.
 
 ## Tying core to log: defining the channel and lobe architecture
 
@@ -49,7 +52,8 @@ Lithofacies thickness varies considerably across the three cored wells. 6407/1-4
 
 ## Building the model
 
-Channel and lobe architectural elements (sand-bearing) were dimensioned using 3 key analog studies of the Frysjaodden Formation (Norway), the Karoo Basin (South Africa), and the Jaca and Ainsa Basins (Spain), because the four wells alone couldn't constrain the lateral extent. [`scripts/createGrid.py`](python/createGrid.py) builds a 150×300×50 cell grid (30m×100m×1m per cell) containing two stacked lobes and a feeder channel, assigns porosity through a Gaussian random field centered on facies-specific means (0.20 in the channel, 0.15 in the lobes), and derives permeability through a power-law fit calibrated against the IP well-log analysis (10-121 mD across the model).
+Channel and lobe architectural elements (sand-bearing) were dimensioned using 3 key analog studies of the Frysjaodden Formation (Norway), the Karoo Basin (South Africa), and the Jaca and Ainsa Basins (Spain), and seismic interpretation (confidential), because the four wells alone couldn't constrain the lateral extent.
+[`scripts/createGrid.py`](python/createGrid.py) builds a 150×300×50 cell grid (30m×100m×1m per cell) containing two stacked lobes and a feeder channel, assigns porosity through a Gaussian random field centered on facies-specific means (0.20 in the channel, 0.15 in the lobes), and derives permeability through a power-law fit calibrated against the IP well-log analysis (10-121 mD across the model).
 
 ![Reservoir realization grid](images/fig06_reservoir_realization_grid.png)
 
@@ -73,6 +77,17 @@ Channel and lobe architectural elements (sand-bearing) were dimensioned using 3 
 ![PROD C production curve](images/fig11_prod_c_curve.png)
 
 PROD A produced roughly four times PROD C's total, tracking the permeability and porosity falloff away from the channel axis (18–25% porosity and 50–121 mD in the channel versus 9–20% and 10–62 mD in the lobes). PROD C still produced a meaningful volume despite sitting at the lobe fringe, which points to the channel-lobe system staying hydraulically connected even where individual architectural elements are weaker on their own. PROD C shows a possible leakage of gas into well-casing annulus in water zones.
+
+## Key Results
+• Average reservoir porosity approximately 15%
+
+• Reservoir permeability ranging from approximately 10 mD to over 100 mD
+
+• Thin-bedded turbidite architecture creates significant heterogeneity and compartmentalisation
+
+• Simulations indicate the Nise Formation on the Eastern Vøring Margin can store significant hydrocarbon volumes and deliver producible gas rates
+
+• Reservoir architecture may provide migration pathways and has implications for future well plug and abandonment activities
 
 ## Decisions & trade-offs
 
@@ -98,8 +113,32 @@ flow simulation/TWOPHASE3D_GAS_A.DATA      # requires OPM Flow; swap in _B or _C
 
 `PORO.INC`, `PERM.INC`, and `FIPNUM.INC` are regenerated rather than stored in this repo — each is 2,250,000 lines of raw per-cell values.
 
+## Software and Tools
+
+| Discipline                 | Software                      |
+| -------------------------- | ----------------------------- |
+| Petrophysical Analysis     | Interactive Petrophysics (IP) |
+| Geological Modelling       | Petrel                        |
+| Stochastic Modelling       | Python, GSTools               |
+| Reservoir Simulation       | OPM Flow                      |
+| Result Visualisation       | ResInsight                    |
+| Mapping and Interpretation | Petrel                        |
+
+
+## Skills Demonstrated
+• Reservoir Characterization
+• Petrophysical Interpretation
+• Core Description and Facies Analysis
+• Subsurface Integration
+• Geological Modelling
+• Stochastic Property Modelling
+• Python for Geoscience Applications
+• Reservoir Simulation
+• Uncertainty Assessment
+• Technical Communication and Scientific Reporting
+
 ## Background
 
-MSc Petroleum Geosciences, NTNU — Department of Geoscience and Petroleum. Thesis: *"Reservoir Characterization and Hydrocarbon Flow Potential of the Upper Cretaceous Nise Formation: Halten Terrace and Nordland Ridge, Offshore Mid-Norway"* (January 2025). Supervised by Arve Næss (Equinor) and Carl Fredrik Berg (NTNU). Full thesis available on request.
+MSc Thesis: *"Reservoir Characterization and Hydrocarbon Flow Potential of the Upper Cretaceous Nise Formation: Halten Terrace and Nordland Ridge, Offshore Mid-Norway"* (January 2025). Supervised by Arve Næss (Equinor) and Carl Fredrik Berg (NTNU). Full thesis available on request.
 
 [LinkedIn](https://www.linkedin.com/in/linda-afrifa)
