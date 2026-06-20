@@ -9,8 +9,8 @@ This repository contains the original Python grid-generation script and OPM Flow
 
 ## Why the Nise Formation
 
-The Nise Formation sits stratigraphically above most of the producing Jurassic fields on the eastern Vøring Margin — Halten Terrace, Nordland Ridge (Norwegian Sea) — and is penetrated by a large share of ongoing exploration in the area, yet it has had little dedicated characterization of its own. 
-Additionally, it carries a regulatory dimension: wells passing through the Nise in hydrocarbon zones need effective plugging and abandonment to prevent gas migration into the well-casing annulus. Hence its flow behavior matters beyond exploration upside alone.
+The Nise Formation lies stratigraphically above most of the producing Jurassic fields on the Eastern Vøring Margin of the Norwegian Sea (Halten Terrace, Nordland Ridge) and is penetrated by a large share of ongoing exploration in the area, yet it has received very little dedicated characterization. 
+Additionally, it has a regulatory dimension: wells passing through the Nise in hydrocarbon zones require effective plugging and abandonment to prevent gas migration into the well-casing annulus. Hence, its flow behavior matters beyond exploration upside alone.
 
 ![Structural map of the study area](https://github.com/lindahafrifa-code/Nise-Formation-Reservoir-Characterization-and-Flow-Simulation/blob/main/images/structural_map.png)
 
@@ -30,7 +30,9 @@ Additionally, it carries a regulatory dimension: wells passing through the Nise 
 
 ## Tying core to log: defining the channel and lobe architecture
 
-Lithofacies were first described from core photographs; lithology, grain size, sorting, and sedimentary structure. Then calibrated against the gamma-ray and resistivity log responses. This calibration allowed the same channel and lobe motifs to be recognized in the uncored well intervals.
+Lithofacies were first described from core photographs; lithology, grain size, sorting, and sedimentary structure. 
+Then calibrated against the gamma-ray and resistivity log responses. 
+This calibration allowed the same channel and lobe motifs to be recognized in the uncored well intervals.
 
 ![Core-to-log calibration for a channel interval](figures/fig02_channel_core_log_calibration.png)
 
