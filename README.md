@@ -45,7 +45,7 @@ Lithofacies thickness varies considerably across the three cored wells. 6407/1-4
 
 ## Workflow
 
-![Methodology workflow](mages/fig05_methodology_workflow.png)
+![Methodology workflow](images/fig05_methodology_workflow.png)
 
 ## Building the model
 
