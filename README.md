@@ -37,13 +37,11 @@ This calibration allowed the same channel and lobe motifs to be recognized in th
 ![Core-to-log calibration for a channel interval](images/fig02_channel_core_log_calibration.png)
 A blocky, cylindrical gamma-ray motif over a 3-4m interval in Well 6610/3-1 calibrates to a channel fill in core. The F3-C sandstone subfacies consist of poorly to well-sorted, fine to medium to coarse-grained, amalgamated white to dark grey sandstones. The F2 heterolithics are thin sandstone/siltstone layers (≤ 0.05 meters thick) interbedded with predominantly dark grey to black mudstones, exhibiting varying levels of bioturbation .
 
-![Core-to-log calibration for a lobe interval](figures/fig03_lobe_core_log_calibration.png)
-
-A coarsening-upward "funnel" gamma-ray trend over an 8 m interval in the same well calibrates to a lobe complex, with F1 hemipelagic mudstone capping an upward transition through F2 into F3-C sandstone.
+![Core-to-log calibration for a lobe interval](images/fig03_lobe_core_log_calibration.png)
+A coarsening-upward "funnel" gamma-ray trend over an 8 m interval in the same well calibrates to a lobe complex, with F1 hemipelagic mudstone capping an upward transition through F2 into F3-C sandstone. The F1 are 0.01-0.2m thick dark grey to black mudstone observed in the cores. The F2 heterolithics are thin sandstone/siltstone layers, whiles F3 lithofacies are sandstones. 
 
 ![Lithofacies thickness by well](figures/fig04_lithofacies_thickness_per_well.png)
-
-Lithofacies thickness varies considerably across the three cored wells — 6407/1-4 is dominated by heterolithics (F2), while 6610/3-1 shows the fullest channel-to-lobe sandstone development. That's part of why the dynamic model's channel and lobe dimensions lean on 6610/3-1 plus the published analogs below, rather than averaging across all four wells.
+Lithofacies thickness varies considerably across the three cored wells. 6407/1-4 is dominated by heterolithics (F2), whereas 6610/3-1 shows the most extensive channel-to-lobe sandstone development. The dynamic model's channel and lobe dimensions are informed by well 6610/3-1 and the published analogs to reduce model uncertainty.
 
 ## Workflow
 
