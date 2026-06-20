@@ -45,9 +45,7 @@ Lithofacies thickness varies considerably across the three cored wells. 6407/1-4
 
 ## Workflow
 
-![Methodology workflow](figures/fig05_methodology_workflow.png)
-
-Concept model from core photos, well logs, and analogs → petrophysical interpretation in IP → object-based 3D grid in Python → dynamic simulation in OPM Flow → visualization and forecasting in ResInsight.
+![Methodology workflow](mages/fig05_methodology_workflow.png)
 
 ## Building the model
 
