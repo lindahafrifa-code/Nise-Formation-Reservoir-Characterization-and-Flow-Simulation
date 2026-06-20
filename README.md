@@ -49,7 +49,7 @@ Lithofacies thickness varies considerably across the three cored wells. 6407/1-4
 
 ## Building the model
 
-Channel and lobe geometry was dimensioned using deep-marine analogs — the Frysjaodden Formation (Norway), Karoo Basin (South Africa), and the Jaca and Ainsa Basins (Spain) — where the four wells alone couldn't constrain lateral extent. [`scripts/createGrid.py`](scripts/createGrid.py) builds a 150×300×50 cell grid (30 m × 100 m × 1 m per cell) containing two stacked lobes and a feeder channel, assigns porosity through a Gaussian random field centered on facies-specific means (0.20 in the channel, 0.15 in the lobes), and derives permeability through a power-law fit calibrated against the IP well-log analysis (10–121 mD across the model).
+Channel and lobe architectural elements (sand-bearing) were dimensioned using three key analog studies of the Frysjaodden Formation (Norway), the Karoo Basin (South Africa), and the Jaca and Ainsa Basins (Spain), because the four wells alone couldn't constrain the lateral extent. [`scripts/createGrid.py`](scripts/createGrid.py) builds a 150×300×50 cell grid (30 m × 100 m × 1 m per cell) containing two stacked lobes and a feeder channel, assigns porosity through a Gaussian random field centered on facies-specific means (0.20 in the channel, 0.15 in the lobes), and derives permeability through a power-law fit calibrated against the IP well-log analysis (10–121 mD across the model).
 
 ![Reservoir realization grid](figures/fig06_reservoir_realization_grid.png)
 
