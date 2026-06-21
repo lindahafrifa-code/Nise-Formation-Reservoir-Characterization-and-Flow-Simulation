@@ -62,7 +62,7 @@ Channel and lobe architectural elements (sand-bearing) were dimensioned using 3 
 
 ## Dynamic simulation & results
 
-3 single-well scenarios in [`simulation/`](simulation/) test how placement affects recoverable gas: PROD A sits on the channel/lobe axis, PROD B is off-axis through two lobes, and PROD C sits at a lobe fringe near the gas-water contact. Each was run independently; the other two wells were shut. Initial pressure was 210 bar against a 190 bar BHP with no acquifer drive and constraint over one year of production.
+3 single-well scenarios in [`simulation/`](simulation/) test how placement affects recoverable gas: PROD A sits on the channel/lobe axis, PROD B is off-axis through two lobes, and PROD C sits at a lobe fringe near the gas-water contact. Each was run independently; the other two wells were shut. Initial pressure was 210 bar against a 190 bar BHP with no aquifer drive and constraint over one year of production.
 ![Remaining gas-in-place](images/fig08_gas_in_place.png)
 
 | Well | Position | Year-end cumulative production | Recovery factor |
