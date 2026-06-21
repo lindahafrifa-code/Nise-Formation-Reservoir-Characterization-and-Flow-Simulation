@@ -18,7 +18,7 @@ Additionally, it has a regulatory dimension: wells passing through the Nise in h
 
 •	Well log and core data for 4 wells: 6407/1-4, 6407/4-1, 6407/2-1 in the Halten Terrace, and 6610/3-1 in the Vestfjorden Basin, were obtained from NPD/DISKOS. 
 
-•	Petrophysical interpretation (shale volume, porosity, water saturation, permeability, cut offs and net reservoir) was performed in Interactive Petrophysics (IP).
+•	Petrophysical interpretation (shale volume, porosity, water saturation, permeability, cut offs, reservoir, net pay, etc.) was performed in Interactive Petrophysics (IP).
 
 •	The 3D geological grid (2,250,000 cells) was built from scratch in Python (NumPy, GSTools, Matplotlib). 
 
